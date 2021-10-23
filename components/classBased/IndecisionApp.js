@@ -3,15 +3,20 @@ import Header from './components/Header';
 import Action from './components/Action';
 import Options from './components/Options';
 import AddOption from './components/AddOption';
+import Disclaimer from './components/Disclaimer';
 
 class IndecisionApp extends Component{
     render(){
+        const title = "Indecion App";
+        const disclaimerText = "results may vary";
+
         return(
             <div>
-                <Header/>
+                <Header title={title} />
                 <Action />
                 <Options />
                 <AddOption/>
+                <Disclaimer disclaimerText={disclaimerText} />
             </div>
         );
     }
