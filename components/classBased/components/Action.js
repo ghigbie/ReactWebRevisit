@@ -6,8 +6,14 @@ export default class Action extends Component {
     }
 
   render() {
+    const {hasOptions} = this.props;
+
     return (
-      <button onClick={this.handlePick}>What should I do?</button>
+      <button 
+        disabled={!hasOptions}
+        onClick={this.handlePick}>
+        What should I do?
+    </button>
     );
   }
 }
