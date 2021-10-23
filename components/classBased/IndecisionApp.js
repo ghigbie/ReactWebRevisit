@@ -9,12 +9,17 @@ class IndecisionApp extends Component{
     render(){
         const title = "Indecion App";
         const disclaimerText = "results may vary";
+        const options = [
+            'Walk the dog',
+            'Check the mail',
+            'Do the laundry'
+        ];
 
         return(
             <div>
                 <Header title={title} />
                 <Action />
-                <Options />
+                <Options options={options}/>
                 <AddOption/>
                 <Disclaimer disclaimerText={disclaimerText} />
             </div>
