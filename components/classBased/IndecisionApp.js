@@ -14,9 +14,13 @@ class IndecisionApp extends Component{
     }
 
     componentDidMount = () => {
-        const json = localStorage.getItem('options');
-        const options = JSON.parse(json);
-
+        try{
+            const json = localStorage.getItem('options');
+            const options = JSON.parse(json);
+            options && this.setState(() => ({options}));
+        }catch(e){
+            alert(`Something went wrong. Invalid data: ${e}`);
+        }
     }
 
     componentDidUpdate = (prevProps, prevState) => {

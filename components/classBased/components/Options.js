@@ -1,13 +1,15 @@
 import Option from "./Option";
 import RemoveAll from "./RemoveAll";
 
-const Options = ({options, handleRemoveAll, handleRemoveOption}) => (
+const GetStared = () => (<p>Please add option to get started.</p>)
+
+const Options = ({options, handleRemoveAll, handleDeleteOption}) => (
     <div>
-        Options Component
+        {options.length === 0 &&  (<GetStared />)}
         {options.map((option) => (
             <Option 
                 key={option} 
-                handleDeleteOption={handleRemoveOption}
+                handleDeleteOption={handleDeleteOption}
                 optionText={option}
             />
         ))}
