@@ -1,13 +1,10 @@
-import React, { Component } from 'react'
+const Disclaimer = ({disclaimerText}) => (
+    <div>
+        <span>*</span>
+        {disclaimerText}
+    </div>
+);
 
-export default class Disclaimer extends Component {
-    render() {
-        const {disclaimerText} = this.props
-        return (
-            <div>
-                <span>*</span>
-                {disclaimerText}
-            </div>
-        )
-    }
-}
+export default Disclaimer;
+
+
