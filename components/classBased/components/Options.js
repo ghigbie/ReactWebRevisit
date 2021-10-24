@@ -16,7 +16,10 @@ export default class Options extends Component {
                         optionText={option}
                     />
                 ))}
-                <RemoveAll handleRemoveAll={handleRemoveAll} />
+                <RemoveAll 
+                    handleRemoveAll={handleRemoveAll} 
+                    hasOptions={options.length > 0 || 0 }
+                />
             </div>
         )
     }

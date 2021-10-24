@@ -20,14 +20,16 @@ class IndecisionApp extends Component{
         }
     }
 
-    handleAddOption = (optionToAdd) => {
+    handleAddOption = (e) => {
+        e.preventDefault();
+        const optionToAdd = e.target.elements.option.value.trim()
         this.setState((prevState) => ({
             ...prevState, 
             options: [...prevState.options, optionToAdd]
         }));
     }
 
-    handleRemoveAll = () =>{
+    handleRemoveAll = () => {
         this.setState((prevState) => ({...prevState, options: []}))
     }
 
@@ -46,7 +48,7 @@ class IndecisionApp extends Component{
 
     render(){
         const title = "Indecision App";
-        const disclaimerText = "results may vary depending on your computer";
+        const disclaimerText = "results may vary";
 
         return(
             <div>
@@ -60,7 +62,7 @@ class IndecisionApp extends Component{
                     handleRemoveAll={this.handleRemoveAll}
                     handleRemoveOption={this.handleRemoveOption}
                 />
-                <AddOption/>
+                <AddOption handleAddOption={this.handleAddOption}/>
                 <Disclaimer disclaimerText={disclaimerText} />
             </div>
         );
