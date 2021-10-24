@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
+const RemoveAll = ({handleRemoveAll, hasOptions}) => (
+    <button
+        disabled={!hasOptions}
+        onClick={handleRemoveAll}> 
+        Remove All
+    </button>
+);
 
-export default class RemoveAll extends Component {
-  render() {
-    const {handleRemoveAll, hasOptions} = this.props;
-    return (
-        <button
-            disabled={!hasOptions}
-            onClick={handleRemoveAll}> 
-            Remove All
-        </button>
-    );
-  }
-}
+export default RemoveAll;
