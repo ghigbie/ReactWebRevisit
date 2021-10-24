@@ -20,9 +20,13 @@ class IndecisionApp extends Component{
         }
     }
 
-    handleAddOption = (e) => {
-        e.preventDefault();
-        const optionToAdd = e.target.elements.option.value.trim()
+    handleAddOption = (optionToAdd) => {
+        if(!optionToAdd){
+            return 'Enter a valid value to add';
+        }else if (this.state.options.indexOf(optionToAdd) > -1){
+            return 'This option already exists. Please create another';
+        }
+
         this.setState((prevState) => ({
             ...prevState, 
             options: [...prevState.options, optionToAdd]
