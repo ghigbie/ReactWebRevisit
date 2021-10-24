@@ -1,13 +1,13 @@
 import Option from "./Option";
 import RemoveAll from "./RemoveAll";
 
-const Options = ({options, handleRemoveAll, handleDeleteOption}) => (
+const Options = ({options, handleRemoveAll, handleRemoveOption}) => (
     <div>
         Options Component
         {options.map((option) => (
             <Option 
                 key={option} 
-                handleDeleteOption={handleDeleteOption}
+                handleDeleteOption={handleRemoveOption}
                 optionText={option}
             />
         ))}
