@@ -1,14 +1,8 @@
-import React, { Component } from 'react';
+const Option = ({optionText, handleRemoveOption}) => (
+  <p>
+      {optionText}
+      <button onClick={() => handleRemoveOption(optionText)}>No Thanks!</button>
+  </p>
+);
 
-export default class Option extends Component {
-  render() {
-    const {optionText, handleRemoveOption} = this.props;
-
-    return (
-      <p>
-        {optionText}
-        <button onClick={() => handleRemoveOption(optionText)}>No Thanks!</button>
-    </p>
-    );
-  }
-}
+export default Option;
