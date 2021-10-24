@@ -8,9 +8,6 @@ import Disclaimer from './components/Disclaimer';
 class IndecisionApp extends Component{
     constructor(props){
         super(props);
-        // this.handleRemoveAll = this.handleRemoveAll.bind(this);
-        // this.handleRemoveOption = this.handleRemoveOption.bind(this);
-        // this.handlePick = this.handlePick.bind(this);
         this.state = {
             options: [
             'Walk the dog',
@@ -38,10 +35,9 @@ class IndecisionApp extends Component{
     }
 
     handleRemoveOption = (optionText) => {
-        alert(`Sanity check ${optionText}`);
         this.setState = ((prevState) => ({
             ...prevState, 
-            options: prevState.options.filter(option => (option !== optionText)),
+            options: prevState.options.filter(option => option !== optionText),
         }))
     }
 
