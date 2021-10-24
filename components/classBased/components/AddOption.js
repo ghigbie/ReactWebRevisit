@@ -13,7 +13,7 @@ export default class AddOption extends Component {
         const optionToAdd = e.target.elements.option.value.trim()
         const error = this.props.handleAddOption(optionToAdd);
         e.target.elements.option.value = '';
-        this.setState((prevState) => ({...prevState, error}))
+        this.setState(() => ({error}))
     }
 
 

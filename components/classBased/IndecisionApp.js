@@ -21,7 +21,6 @@ class IndecisionApp extends Component{
         }
 
         this.setState((prevState) => ({
-            ...prevState, 
             options: [...prevState.options, optionToAdd]
         }));
     }
@@ -31,10 +30,11 @@ class IndecisionApp extends Component{
     }
 
     handleDeleteOption = (optionText) => {
-        this.setState = ((prevState) => ({
-            ...prevState, 
-            options: prevState.options.filter(option => option !== optionText),
-        }))
+        this.setState((prevState) => (
+            {
+                options: prevState.options.filter(option => option !== optionText)
+            })
+        );
     }
 
     handlePick = () => {
