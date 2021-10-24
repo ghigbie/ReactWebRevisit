@@ -5,3 +5,5 @@ const Action = ({hasOptions, handlePick}) => (
         What should I do?
     </button>
 );
+
+export default Action;

@@ -9,11 +9,7 @@ class IndecisionApp extends Component{
     constructor(props){
         super(props);
         this.state = {
-            options: [
-            'Walk the dog',
-            'Check the mail',
-            'Do the laundry'
-            ],
+            options: props.options
         }
     }
 
@@ -34,7 +30,7 @@ class IndecisionApp extends Component{
         this.setState((prevState) => ({...prevState, options: []}))
     }
 
-    handleRemoveOption = (optionText) => {
+    handleDeleteOption = (optionText) => {
         this.setState = ((prevState) => ({
             ...prevState, 
             options: prevState.options.filter(option => option !== optionText),
@@ -60,13 +56,17 @@ class IndecisionApp extends Component{
                 <Options 
                     options={this.state.options}
                     handleRemoveAll={this.handleRemoveAll}
-                    handleRemoveOption={this.handleRemoveOption}
+                    handleDeleteOption={this.handleDeleteOption}
                 />
                 <AddOption handleAddOption={this.handleAddOption}/>
                 <Disclaimer disclaimerText={disclaimerText} />
             </div>
         );
     }
+}
+
+IndecisionApp.defaultProps = {
+    options: []
 }
 
 export default IndecisionApp;

@@ -1,7 +1,7 @@
-const Option = ({optionText, handleRemoveOption}) => (
+const Option = ({optionText, handleDeleteOption}) => (
   <p>
       {optionText}
-      <button onClick={() => handleRemoveOption(optionText)}>No Thanks!</button>
+      <button onClick={() => handleDeleteOption(optionText)}>No Thanks!</button>
   </p>
 );
 
