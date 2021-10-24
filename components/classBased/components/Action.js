@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 
 export default class Action extends Component {
-    handlePick(){
-        alert('handlePickCalled');
-    }
-
   render() {
-    const {hasOptions} = this.props;
+    const {hasOptions, handlePick} = this.props;
 
     return (
       <button 
         disabled={!hasOptions}
-        onClick={this.handlePick}>
+        onClick={handlePick}>
         What should I do?
     </button>
     );
